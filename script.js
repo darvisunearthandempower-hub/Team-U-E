@@ -1,11 +1,24 @@
-function welcomePlayer() {
-    const playerName = document.getElementById("player-name").value;
+const locations = [
+  "Seattle, Washington",
+  "Austin, Texas",
+  "Chicago, Illinois",
+  "Boston, Massachusetts",
+  "Portland, Oregon",
+  "San Diego, California",
+  "Denver, Colorado",
+  "Nashville, Tennessee",
+  "Miami, Florida",
+  "Phoenix, Arizona"
+];
 
-    const message = document.getElementById("welcome-message");
+const locationElement = document.getElementById("location");
+const yearElement = document.getElementById("year");
 
-    if (playerName === "") {
-        message.textContent = "Please enter your player name.";
-    } else {
-        message.textContent = `Welcome to the team, ${playerName}!`;
-    }
+if (locationElement) {
+  const randomLocation = locations[Math.floor(Math.random() * locations.length)];
+  locationElement.textContent = randomLocation;
+}
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
 }
